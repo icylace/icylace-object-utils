@@ -1,0 +1,15 @@
+{
+  "name": "icylace-object-utils",
+  "version": "0.0.0",
+  "description": "A collection of object-related utilities.",
+  "keywords": ["obj", "object", "objects", "utilities", "util", "utility", "utils"],
+  "author": "Ron Martinez <ramartin.net@gmail.com> (https://ramartin.net/)",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/icylace/icylace-object-utils",
+    "type": "git"
+  },
+  "homepage": "https://github.com/icylace/icylace-object-utils",
+  "bugs": "https://github.com/icylace/icylace-object-utils/issues"
+}
