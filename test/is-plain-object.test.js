@@ -1,3 +1,5 @@
+"use strict"
+
 const isPlainObject = require("../lib/is-plain-object")
 
 describe("the plain object checker", () => {
