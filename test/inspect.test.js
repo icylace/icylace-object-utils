@@ -1,3 +1,5 @@
+"use strict"
+
 const inspect = require("../lib/inspect")
 
 describe("the object inspector", () => {
