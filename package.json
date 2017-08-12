@@ -1,15 +1,19 @@
 {
   "name": "icylace-object-utils",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A collection of object-related utilities.",
   "keywords": [
+    "examine",
+    "inspect",
     "obj",
     "object",
     "objects",
+    "plain",
     "utilities",
     "util",
     "utility",
-    "utils"
+    "utils",
+    "where"
   ],
   "author": "Ron Martinez <ramartin.net@gmail.com> (https://ramartin.net/)",
   "license": "MIT",
@@ -21,6 +25,7 @@
   "homepage": "https://github.com/icylace/icylace-object-utils",
   "bugs": "https://github.com/icylace/icylace-object-utils/issues",
   "devDependencies": {
-    "jest": "^20.0.4"
+    "jest": "^20.0.4",
+    "ramda": "^0.24.1"
   }
 }
