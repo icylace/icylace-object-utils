@@ -101,4 +101,9 @@ describe("the object validator", () => {
     ]
     expect(whereAll(spec, data)).toBeFalsy()
   })
+  test("does not validate an array not containing the desired elements", () => {
+    const spec = [R.equals("hi"), R.equals("bar")]
+    const data = [null, null, null, null, null, null]
+    expect(whereAll(spec, data)).toBeFalsy()
+  })
 })
