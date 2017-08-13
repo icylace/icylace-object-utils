@@ -77,4 +77,7 @@ describe("the plain object checker", () => {
   test("does not validate the Math object", () => {
     expect(isPlainObject(Math)).toBeFalsy()
   })
+  test("does not validate a symbol", () => {
+    expect(isPlainObject(Symbol())).toBeFalsy()
+  })
 })
