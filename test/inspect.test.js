@@ -28,6 +28,12 @@ describe("the object inspector", () => {
       const want = { foo: 1 }
       expect(inspect(spec, data)).toEqual(want)
     })
+    test("extracts nothing when using a spec not containing string values", () => {
+      const spec = { a: 1 }
+      const data = { a: 1 }
+      const want = {}
+      expect(inspect(spec, data)).toEqual(want)
+    })
     test("extracts nothing when trying to get a property from an object missing it", () => {
       const spec = { a: "foo" }
       const data = { b: 1 }
