@@ -39,31 +39,6 @@ describe("the object validator", () => {
     const data = ["1"]
     expect(whereAll(spec, data)).toBeFalsy()
   })
-  test("does not validate an unnamed symbol", () => {
-    const spec = Symbol()
-    const data = Symbol()
-    expect(whereAll(spec, data)).toBeFalsy()
-  })
-  test("does not validate a named symbol", () => {
-    const spec = Symbol("foo")
-    const data = Symbol("foo")
-    expect(whereAll(spec, data)).toBeFalsy()
-  })
-  test("validates a global unnamed symbol", () => {
-    const spec = Symbol.for()
-    const data = Symbol.for()
-    expect(whereAll(spec, data)).toBeTruthy()
-  })
-  test("validates a global named symbol", () => {
-    const spec = Symbol.for("foo")
-    const data = Symbol.for("foo")
-    expect(whereAll(spec, data)).toBeTruthy()
-  })
-  test("does not validate a global named symbol with a different name", () => {
-    const spec = Symbol.for("foo")
-    const data = Symbol.for("bar")
-    expect(whereAll(spec, data)).toBeFalsy()
-  })
   test("validates an object with a string property and a nested object containing a string property", () => {
     const spec = {
       a: R.equals("hi"),
@@ -187,5 +162,33 @@ describe("the object validator", () => {
     const spec = [R.equals("hi"), R.equals("bar")]
     const data = [null, null, null, null, null, null]
     expect(whereAll(spec, data)).toBeFalsy()
+  })
+
+  describe("when used with symbols", () => {
+    test("does not validate an undescribed symbol", () => {
+      const spec = Symbol()
+      const data = Symbol()
+      expect(whereAll(spec, data)).toBeFalsy()
+    })
+    test("does not validate a described symbol", () => {
+      const spec = Symbol("foo")
+      const data = Symbol("foo")
+      expect(whereAll(spec, data)).toBeFalsy()
+    })
+    test("validates a global undescribed symbol", () => {
+      const spec = Symbol.for()
+      const data = Symbol.for()
+      expect(whereAll(spec, data)).toBeTruthy()
+    })
+    test("validates a global described symbol", () => {
+      const spec = Symbol.for("foo")
+      const data = Symbol.for("foo")
+      expect(whereAll(spec, data)).toBeTruthy()
+    })
+    test("does not validate a global described symbol with a different description", () => {
+      const spec = Symbol.for("foo")
+      const data = Symbol.for("bar")
+      expect(whereAll(spec, data)).toBeFalsy()
+    })
   })
 })

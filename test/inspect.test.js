@@ -165,6 +165,39 @@ describe("the object inspector", () => {
     })
   })
 
+  describe("when used with symbols", () => {
+    test("extracts nothing from an undescribed symbol", () => {
+      const spec = Symbol()
+      const data = Symbol()
+      const want = {}
+      expect(inspect(spec, data)).toEqual(want)
+    })
+    test("extracts nothing from a described symbol", () => {
+      const spec = Symbol("foo")
+      const data = Symbol("foo")
+      const want = {}
+      expect(inspect(spec, data)).toEqual(want)
+    })
+    test("extracts nothing from a global undescribed symbol", () => {
+      const spec = Symbol.for()
+      const data = Symbol.for()
+      const want = {}
+      expect(inspect(spec, data)).toEqual(want)
+    })
+    test("extracts nothing from a global described symbol", () => {
+      const spec = Symbol.for("foo")
+      const data = Symbol.for("foo")
+      const want = {}
+      expect(inspect(spec, data)).toEqual(want)
+    })
+    test("extracts nothing from a global described symbol with a different description", () => {
+      const spec = Symbol.for("foo")
+      const data = Symbol.for("bar")
+      const want = {}
+      expect(inspect(spec, data)).toEqual(want)
+    })
+  })
+
   describe("when used with objects and arrays together", () => {
     test("extracts a single nested property from an object with a single property nested in an array", () => {
       const spec = { a: [{ b: "foo" }] }
