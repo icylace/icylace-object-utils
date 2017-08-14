@@ -38,6 +38,12 @@ describe("the object examiner", () => {
     const data = { a: "1" }
     expect(examine(spec, data)).toBeNull()
   })
+  test("using a spec without a predicate, validates an object but extracts nothing", () => {
+    const spec = { a: "foo" }
+    const data = { a: "foo" }
+    const want = {}
+    expect(examine(spec, data)).toEqual(want)
+  })
   test("does not validate an object missing the desired key", () => {
     const spec = { a: see(Number.isInteger, "foo") }
     const data = { b: 1 }
