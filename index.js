@@ -1,8 +1,9 @@
 "use strict"
 
-const { examine, see } = require("./lib/examine")
-const inspect = require("./lib/inspect")
-const isPlainObject = require("./lib/is-plain-object")
-const whereAll = require("./lib/where-all")
-
-module.exports = { examine, inspect, isPlainObject, see, whereAll }
+module.exports = {
+  examine: require("./lib/examine"),
+  inspect: require("./lib/inspect"),
+  isPlainObject: require("./lib/is-plain-object"),
+  see: require("./lib/examine"),
+  whereAll: require("./lib/where-all"),
+}

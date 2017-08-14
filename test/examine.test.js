@@ -1,7 +1,8 @@
 "use strict"
 
 const R = require("ramda")
-const { examine, see } = require("../lib/examine")
+const examine = require("../lib/examine")
+const see = require("../lib/see")
 const whereAll = require("../lib/where-all")
 
 describe("the object examiner", () => {
