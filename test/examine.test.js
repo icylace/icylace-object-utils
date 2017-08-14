@@ -1,6 +1,5 @@
 "use strict"
 
-const R = require("ramda")
 const examine = require("../lib/examine")
 const see = require("../lib/see")
 const whereAll = require("../lib/where-all")
