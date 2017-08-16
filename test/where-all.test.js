@@ -1,6 +1,5 @@
 "use strict"
 
-const R = require("ramda")
 const whereAll = require("../lib/where-all")
 
 describe("the object validator", () => {
@@ -41,8 +40,8 @@ describe("the object validator", () => {
   })
   test("validates an object with a string property and a nested object containing a string property", () => {
     const spec = {
-      a: R.equals("hi"),
-      b: { c: R.equals("bar") },
+      a: it => it === "hi",
+      b: { c: it => it === "bar" },
     }
     const data = {
       a: "hi",
@@ -74,8 +73,8 @@ describe("the object validator", () => {
   })
   test("validates an array with a string element and a nested object containing a string property", () => {
     const spec = [
-      R.equals("hi"),
-      { c: R.equals("bar") },
+      it => it === "hi",
+      { c: it => it === "bar" },
     ]
     const data = [
       "hi",
@@ -85,12 +84,12 @@ describe("the object validator", () => {
   })
   test("validates an array with some string elements, an object, and a few arrays", () => {
     const spec = [
-      R.equals("hi"),
-      { c: R.equals("bar") },
+      it => it === "hi",
+      { c: it => it === "bar" },
       Array.isArray,
       null,
-      R.is(String),
-      [[R.is(String)]],
+      it => typeof it === "string",
+      [[it => typeof it === "string"]],
     ]
     const data = [
       "hi",
@@ -105,15 +104,15 @@ describe("the object validator", () => {
   })
   test("validates an array with some string elements, a couple objects, and a couple arrays", () => {
     const spec = [
-      R.equals("hi"),
-      { a: R.equals("bar") },
+      it => it === "hi",
+      { a: it => it === "bar" },
       Array.isArray,
       [
-        { b: R.is(String) },
-        { c: R.is(String) },
+        { b: it => typeof it === "string" },
+        { c: it => typeof it === "string" },
       ],
       null,
-      { e: R.is(Object) },
+      { e: it => typeof it === "object" },
     ]
     const data = [
       "hi",
@@ -133,15 +132,15 @@ describe("the object validator", () => {
   })
   test("does not validate an array with some string elements, a couple objects, and a couple arrays while skipping the validation check for an array element", () => {
     const spec = [
-      R.equals("hi"),
-      { a: R.equals("bar") },
+      it => it === "hi",
+      { a: it => it === "bar" },
       Array.isArray,
       [
-        { b: R.is(String) },
-        { c: R.is(String) },
+        { b: it => typeof it === "string" },
+        { c: it => typeof it === "string" },
       ],
       null,
-      { e: R.is(Object) },
+      { e: it => typeof it === "object" },
     ]
     const data = [
       { a: "bar" },
@@ -159,7 +158,7 @@ describe("the object validator", () => {
     expect(whereAll(spec, data)).toBeFalsy()
   })
   test("does not validate an array not containing the desired elements", () => {
-    const spec = [R.equals("hi"), R.equals("bar")]
+    const spec = [it => it === "hi", it => it === "bar"]
     const data = [null, null, null, null, null, null]
     expect(whereAll(spec, data)).toBeFalsy()
   })
