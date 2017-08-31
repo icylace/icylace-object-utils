@@ -174,11 +174,6 @@ describe("the object validator", () => {
       const data = Symbol("foo")
       expect(whereAll(spec, data)).toBeFalsy()
     })
-    test("validates a global undescribed symbol", () => {
-      const spec = Symbol.for()
-      const data = Symbol.for()
-      expect(whereAll(spec, data)).toBeTruthy()
-    })
     test("validates a global described symbol", () => {
       const spec = Symbol.for("foo")
       const data = Symbol.for("foo")

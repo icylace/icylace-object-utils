@@ -100,9 +100,6 @@ describe("the plain object checker", () => {
     test("does not validate a described symbol", () => {
       expect(isPlainObject(Symbol("foo"))).toBeFalsy()
     })
-    test("validates a global undescribed symbol", () => {
-      expect(isPlainObject(Symbol.for())).toBeFalsy()
-    })
     test("validates a global described symbol", () => {
       expect(isPlainObject(Symbol.for("foo"))).toBeFalsy()
     })

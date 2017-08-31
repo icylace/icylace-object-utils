@@ -178,12 +178,6 @@ describe("the object inspector", () => {
       const want = {}
       expect(inspect(spec, data)).toEqual(want)
     })
-    test("extracts nothing from a global undescribed symbol", () => {
-      const spec = Symbol.for()
-      const data = Symbol.for()
-      const want = {}
-      expect(inspect(spec, data)).toEqual(want)
-    })
     test("extracts nothing from a global described symbol", () => {
       const spec = Symbol.for("foo")
       const data = Symbol.for("foo")

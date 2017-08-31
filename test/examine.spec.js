@@ -95,11 +95,6 @@ describe("the object examiner", () => {
       const data = Symbol("foo")
       expect(examine(spec, data)).toBeFalsy()
     })
-    test("validates a global undescribed symbol but extracts nothing", () => {
-      const spec = Symbol.for()
-      const data = Symbol.for()
-      expect(examine(spec, data)).toBeTruthy()
-    })
     test("validates a global described symbol but extracts nothing", () => {
       const spec = Symbol.for("foo")
       const data = Symbol.for("foo")
