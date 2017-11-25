@@ -17,8 +17,8 @@
   ],
   "author": "Ron Martinez <ramartin.net@gmail.com> (https://ramartin.net/)",
   "license": "MIT",
-  "main": "lib/api.js",
-  "types": "lib/api.d.ts",
+  "main": "./lib/api.js",
+  "types": "./lib/api.d.ts",
   "repository": {
     "url": "https://github.com/icylace/icylace-object-utils",
     "type": "git"
