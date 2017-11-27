@@ -8,7 +8,7 @@ declare namespace IcylaceObjectUtils {
     prop: string,
     detecting?: boolean | null,
   ): (value: any) => string | boolean | null
-  export function uniquesFor(...a: any[]): any[]
+  export function uniquesFor(...these: any[]): any[]
   export function whereAll(spec: any, data: any): boolean
 }
 
