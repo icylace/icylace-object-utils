@@ -1,4 +1,8 @@
-# `uniquesFor(...these: any[]): any[]`
+# uniquesFor
+
+```ts
+uniquesFor(...these: any[]): any[]
+```
 
 Gets elements that are unique throughout a given group of arrays.
 

@@ -1,4 +1,8 @@
-# `see(predicate: (any) => boolean, prop: string, detecting: boolean | null = null): (any) => string | boolean | null`
+# see
+
+```ts
+see(predicate: (any) => boolean, prop: string, detecting: boolean | null = null): (any) => string | boolean | null
+```
 
 A convenience function for use with `examine`.
 

@@ -1,4 +1,8 @@
-# `isPlainObject(it: any): boolean`
+# isPlainObject
+
+```ts
+isPlainObject(it: any): boolean
+```
 
 Checks if a value is a plain object.
 

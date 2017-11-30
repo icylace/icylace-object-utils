@@ -1,4 +1,8 @@
-# `inspect(spec: any, data: any): object`
+# inspect
+
+```ts
+inspect(spec: any, data: any): object
+```
 
 Retrieves values from an input data structure according to a given spec data structure.
 

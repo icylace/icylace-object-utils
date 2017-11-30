@@ -1,4 +1,8 @@
-# `whereAll(spec: any, data: any): boolean`
+# whereAll
+
+```ts
+whereAll(spec: any, data: any): boolean
+```
 
 Checks if the given data satisfies a given specification.
 

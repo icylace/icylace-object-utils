@@ -1,4 +1,8 @@
-# `entriesAsObject(entries: [string | number, any][]): object`
+# entriesAsObject
+
+```ts
+entriesAsObject(entries: [string | number, any][]): object
+```
 
 Converts an array of key-value pairs into an object.
 

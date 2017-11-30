@@ -1,4 +1,8 @@
-# `examine(spec: any, data: any, props: object = {}): object | null`
+# examine
+
+```ts
+examine(spec: any, data: any, props: object = {}): object | null
+```
 
 A combination of `inspect` and `whereAll`.
 
